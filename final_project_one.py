@@ -17,4 +17,21 @@ def move (board, position_number, mark):
     # because python starts to count at 0 and then it would always be the chosen position + 1
 
     board = board[:position_number_trans] + mark + board[position_number_trans + 1:20]
-    return board   
+    return board 
+
+
+def player_move (board):
+    # to get the input of the player
+    while True:
+        player_inp = int(input('Please enter a number between 1 and 20: '))
+        if player_inp <1:
+            print('Please enter a number in the given range!')
+        elif player_inp >20:
+            print('Please enter a number in the given range!')
+        elif board[player_inp-1] == 'x':
+            print('This spot is already taken by you, please chose another one!')
+        elif board[player_inp-1] == 'o':
+            print('This spot is already taken by the computer, please chose another one!')
+        else:
+            board = move(board, player_inp, 'x')
+            return board
