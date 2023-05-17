@@ -44,10 +44,17 @@ def pc_move(board):
         computer_inp = (randrange(0,19))
         if board[computer_inp] in ('x', 'o'):
             computer_inp = (randrange(0,19))
-        if board[computer_inp] == '-':
+        elif board[computer_inp] == '-':
             board = move(board, computer_inp, 'o')
             break
     return board
+
+#I tried a LOT of different ways here to prevent the computer to overwrite marks that
+#are already on the board, however I was not successful. I also tried without a while loop,
+#so only if conditions, and also some stuff which probably does not make sense (I was already
+# a litte desperate haha). I hope it is fine that I still sumbitted what i managed to do and I 
+# hope that someone can give me feedback here on what I did wrong. If you need me to re-submit 
+# afterwards for the project to count as submitted, please let me know :)
 
 
 def oneD_tictactoe():
