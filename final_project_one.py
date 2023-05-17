@@ -50,19 +50,24 @@ def pc_move(board):
     return board
 
 
-board = '--------------------'
+def oneD_tictactoe():
 
-while '-' in board:
-    board = (player_move(board))
-    board = (pc_move(board))
-    print(board)
-    print(evaluate(board))
-    if evaluate(board) == 'x':
-        print('You won!')
-        break
-    elif evaluate(board) == 'o':
-        print('You lost!')
-        break
-    elif evaluate(board) == '!':
-        print('Draw! Start a new game!')
-        break
+    board = '--------------------'
+
+    while '-' in board:
+        board = (player_move(board))
+        board = (pc_move(board))
+        print(board)
+        print(evaluate(board))
+        if evaluate(board) == 'x':
+            print('You won!')
+            break
+        elif evaluate(board) == 'o':
+            print('You lost!')
+            break
+        elif evaluate(board) == '!':
+            print('Draw! Start a new game!')
+            break
+    return board
+
+print(oneD_tictactoe())
