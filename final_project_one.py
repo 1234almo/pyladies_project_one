@@ -48,3 +48,21 @@ def pc_move(board):
             board = move(board, computer_inp, 'o')
             break
     return board
+
+
+board = '--------------------'
+
+while '-' in board:
+    board = (player_move(board))
+    board = (pc_move(board))
+    print(board)
+    print(evaluate(board))
+    if evaluate(board) == 'x':
+        print('You won!')
+        break
+    elif evaluate(board) == 'o':
+        print('You lost!')
+        break
+    elif evaluate(board) == '!':
+        print('Draw! Start a new game!')
+        break
