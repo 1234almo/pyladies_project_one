@@ -35,3 +35,16 @@ def player_move (board):
         else:
             board = move(board, player_inp, 'x')
             return board
+
+
+def pc_move(board):
+# to get the pc's move on the board
+    from random import randrange
+    while True:
+        computer_inp = (randrange(0,19))
+        if board[computer_inp] in ('x', 'o'):
+            computer_inp = (randrange(0,19))
+        if board[computer_inp] == '-':
+            board = move(board, computer_inp, 'o')
+            break
+    return board
